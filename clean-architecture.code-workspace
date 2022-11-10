@@ -1,6 +1,9 @@
 {
   "folders": [
     {
+      "path": "./nodejs_nestjs/"
+    },
+    {
       "path": "."
     }
   ],
