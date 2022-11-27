@@ -5,6 +5,9 @@
     },
     {
       "path": "."
+    },
+    {
+      "path": "golang-web"
     }
   ],
   "settings": {}
