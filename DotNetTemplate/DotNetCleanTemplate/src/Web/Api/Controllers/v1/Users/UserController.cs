@@ -1,0 +1,50 @@
+﻿using DotNetCleanTemplate.Api.Controllers.v1.Users.Requests;
+using DotNetCleanTemplate.ApiFramework.Tools;
+using DotNetCleanTemplate.Application.Users.Command.CreateUser;
+using DotNetCleanTemplate.Application.Users.Command.Login;
+using DotNetCleanTemplate.Application.Users.Command.RefreshToken;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace DotNetCleanTemplate.Api.Controllers.v1.Users
+{
+    [ApiVersion("1")]
+    public class UserController : BaseControllerV1
+    {
+        [HttpPost("signup")]
+        [SwaggerOperation("sign up user")]
+        [AllowAnonymous]
+        public virtual async Task<ApiResult<bool>> SingUpAsync(SingUpRequest request, CancellationToken cancellationToken)
+        {
+            var command = Mapper.Map<SingUpRequest, CreateUserCommand>(request);
+
+            var result = await Mediator.Send(command, cancellationToken);
+            return new ApiResult<bool>(result);
+        }
+
+        [HttpPost("login")]
+        [SwaggerOperation("login by username and password")]
+        [AllowAnonymous]
+        public virtual async Task<ApiResult<LoginResponse>> LoginAsync([FromForm] LoginRequest request, CancellationToken cancellationToken)
+        {
+            var command = Mapper.Map<LoginRequest, LoginCommand>(request);
+
+            var result = await Mediator.Send(command, cancellationToken);
+            return new ApiResult<LoginResponse>(result);
+        }
+
+        [HttpPost("refreshToken")]
+        [SwaggerOperation("get new refresh and access token")]
+        [AllowAnonymous]
+        public virtual async Task<ApiResult<RefreshTokenResponse>> RefreshTokenAsync([FromBody] RefreshTokenRequest request, CancellationToken cancellationToken)
+        {
+            var command = Mapper.Map<RefreshTokenRequest, RefreshTokenCommand>(request);
+
+            var result = await Mediator.Send(command, cancellationToken);
+            return new ApiResult<RefreshTokenResponse>(result);
+        }
+    }
+}
