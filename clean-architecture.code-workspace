@@ -5,6 +5,12 @@
     },
     {
       "path": "."
+    },
+    {
+      "path": "golang-web"
+    },
+    {
+      "path": "DotNetTemplate"
     }
   ],
   "settings": {}
