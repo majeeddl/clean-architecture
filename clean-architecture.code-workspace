@@ -10,10 +10,10 @@
       "path": "DotNetTemplate"
     },
     {
-      "path": "."
+      "path": "python_flask"
     },
     {
-      "path": "python_flask"
+      "path": "."
     }
   ],
   "settings": {}
