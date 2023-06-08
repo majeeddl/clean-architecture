@@ -12,9 +12,11 @@
     {
       "path": "python_flask"
     },
-    {
-      "path": "."
-    }
+    // {
+    //   "path": "."
+    // }
   ],
-  "settings": {}
+  "settings": {
+    "dotnet.defaultSolution": "c:\\Users\\majeed.dourandeesh\\Documents\\Github\\clean-architecture\\DotNetTemplate\\DotNetCleanTemplate\\DotNetCleanTemplate.sln"
+  }
 }
