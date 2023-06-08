@@ -7,14 +7,8 @@
       "path": "golang-web"
     },
     {
-      "path": "DotNetTemplate"
-    },
-    {
       "path": "python_flask"
-    },
-    // {
-    //   "path": "."
-    // }
+    }
   ],
   "settings": {
     "dotnet.defaultSolution": "c:\\Users\\majeed.dourandeesh\\Documents\\Github\\clean-architecture\\DotNetTemplate\\DotNetCleanTemplate\\DotNetCleanTemplate.sln"
